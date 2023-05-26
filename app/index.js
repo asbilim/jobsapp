@@ -1,4 +1,4 @@
-import {View,Text,SafeAreaView} from "react-native"
+import {View,Text,SafeAreaView,ScrollView} from "react-native"
 import {useState} from "react"
 import {Stack,useRouter} from "expo-router"
 import {COLORS,icons,images,SIZES} from "../constants"
@@ -30,14 +30,14 @@ export default function Home(){
                     <ScreenHeaderBtn iconUrl={icons.menu} dimensions="60%" />
                 ),
                 headerRight:()=>(
-                    <ScreenHeaderBtn iconUrl={icons.profile} dimensions="100%" />
+                    <ScreenHeaderBtn iconUrl={images.profile} dimensions="100%" />
                 ),
                 headerTitle:""
             }} /> 
 
             {/* the header of the screen part */}
 
-            <SafeAreaView
+            <ScrollView
                 showsVerticalScrollIndicator={false}
             >
 
@@ -48,9 +48,12 @@ export default function Home(){
                     }}
                 >
                     <Welcome />
+                    <Popularjobs />
+                <Nearbyjobs />
                 </View>
 
-            </SafeAreaView >
+            </ScrollView >
+
 
 
         </SafeAreaView>
