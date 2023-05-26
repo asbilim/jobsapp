@@ -3,7 +3,7 @@ import { View, Text , TouchableOpacity, FlatList,ActivityIndicator} from 'react-
 import { useRouter } from 'expo-router'
 import styles from './popularjobs.style'
 import PopularJobCard from '../../common/cards/popular/PopularJobCard'
-import { COLORS, sizes } from '../../../constants'
+import { COLORS, SIZES, sizes } from '../../../constants'
 
 const Popularjobs = () => {
 
@@ -32,6 +32,9 @@ const Popularjobs = () => {
                 renderItem={({item})=>(
                   <PopularJobCard item={item} />
                 )}
+                keyExtractor={item=>item?.job_id}
+                contentContainerStyle={{columnGap:SIZES.medium}}
+                horizontal
               />  
             )
           }
